@@ -3,6 +3,7 @@ myPage();
 
 function allUsers() {
   try {
+    console.log("모든 유저 가져오기");
     fetch("api/users/all-users")
       .then(function (response) {
         return response.json();
@@ -12,11 +13,13 @@ function allUsers() {
         const { usersData } = response;
         if (usersData) {
           usersData.forEach(x => {
+            let profileImage = x.profileImage;
             if (!x.profileImage) {
-              let profileImage = "https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg";
+              profileImage = "https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg";
+            }
 
-              const userCard = document.createElement("div");
-              userCard.innerHTML = `<div id="${x.userId}" >
+            const userCard = document.createElement("div");
+            userCard.innerHTML = `<div id="${x.userId}" >
                                     <div class="user-card">
                                      <div class="img-box">
                                         <img src="${profileImage}" alt="" onerror="src='https://item.kakaocdn.net/do/dc9561970173c28a13654c3f14180b4b617ea012db208c18f6e83b1a90a7baa7'" />
@@ -24,12 +27,11 @@ function allUsers() {
                                      <h3>${x.nickname}</h3>
                                   </div>
                                 </div>`;
-              userList.append(userCard);
-              userCard.addEventListener("click", e => {
-                const userId = userCard.firstChild.id;
-                window.location.href = `/profile/${userId}`;
-              });
-            }
+            userList.append(userCard);
+            userCard.addEventListener("click", e => {
+              const userId = userCard.firstChild.id;
+              window.location.href = `/profile/${userId}`;
+            });
           });
         } else {
           var noPostsMessage = document.createElement("li");

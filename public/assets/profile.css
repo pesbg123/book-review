@@ -209,6 +209,7 @@
 
 .container-1 .row .profile-img img {
   border-radius: 10px;
+  width: 100%;
   height: 90%;
 }
 

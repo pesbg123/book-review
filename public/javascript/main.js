@@ -96,11 +96,7 @@ function generatePostCards(posts, postsList) {
         const postResult = document.createElement("div");
         postResult.innerHTML = `<div class="item" >
                               <div class="front">
-                                <img
-                                  src="${postImg}"
-                                  alt=""
-                                  onerror="src='https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg'"
-                                />
+                                <img src="${postImg}"/>
                               </div>
                               <div class="movie-info">
                                 <h2>${post.title}</h2>

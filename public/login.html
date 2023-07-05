@@ -2,90 +2,86 @@
 
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>로그인</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="/assets/header.css" />
-    <link rel="stylesheet" href="/assets/login.css" />
-    <script type="module" src="/javascript/login.js" defer></script>
-  </head>
 
-  <body>
-    <nav>
-      <a id="home" href="/">
-        <img src="https://cdn-icons-png.flaticon.com/512/3296/3296160.png" alt="" />
-      </a>
-      <ul>
-        <li>
-          <a id="popular" class="category_btn" href="/login">로그인/회원가입</a>
-        </li>
-      </ul>
-    </nav>
-    <section class="login-section">
-      <h1 class="login">Login</h1>
-      <form id="login-form">
-        <div class="email-box">
-          <label for="email">E-Mail :</label>
-          <input id="email" class="email-in" type="text" name="email" required /><br />
-        </div>
-        <div class="password-box">
-          <label for="password">Password :</label>
-          <input id="password" class="password-in" type="text" name="password" required /><br />
-        </div>
-        <div class="buttons">
-          <button id="login-button" class="loginbutton" type="submit">Login</button>
-          <button id="signup-button" class="signupbutton" type="submit">Join</button>
-        </div>
-      </form>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>로그인</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+  <link rel="stylesheet" href="/assets/header.css" />
+  <link rel="stylesheet" href="/assets/login.css" />
+  <script type="module" src="/javascript/login.js" defer></script>
+</head>
 
-      <!-- 회원가입 모달 -->
-      <div id="signup-modal" class="modal">
-        <div id="signup-modal-content">
-          <span id="signup-modal-close">&times;</span>
-          <h2>회원가입</h2>
-          <form id="signup-form">
-            <div class="mb-3">
-              <label for="inputEmail" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="signup-email" aria-describedby="emailHelp" />
-              <button class="btn btn-outline-secondary" type="button" id="emailAuthButton">인증하기</button>
-              <!-- 숨겨진 인증코드 라벨 -->
-              <div id="email-auth" class="input-group mb-3 d-none">
-                <input type="text" id="inputCode" class="form-control" placeholder="인증코드" />
-                <!-- 이메일 인증하기 버튼 -->
-                <button class="btn btn-outline-secondary" type="button" id="submitCode">확인</button>
-              </div>
-              <div id="emailHelp" class="form-text"></div>
-            </div>
-            <div class="mb-3">
-              <label for="signup-nickname" class="form-label">Nickname</label>
-              <input type="text" class="form-control" id="signup-nickname" />
-            </div>
-            <div class="mb-3">
-              <label for="signup-password" class="form-label">Password</label>
-              <input type="password" class="form-control" id="signup-password" />
-            </div>
-            <div class="mb-3">
-              <label for="signup-confirm-password" class="form-label">Password Confirm</label>
-              <input type="password" class="form-control" id="signup-confirm-password" />
-            </div>
-
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
-          <div id="errMessage" class="form-text"></div>
-        </div>
+<body>
+  <nav>
+    <a id="home" href="/">
+      <img src="https://cdn-icons-png.flaticon.com/512/3296/3296160.png" alt="" />
+    </a>
+    <ul>
+      <li>
+        <a id="popular" class="category_btn" href="/login">로그인/회원가입</a>
+      </li>
+    </ul>
+  </nav>
+  <section class="login-section">
+    <h1 class="login">Login</h1>
+    <form id="login-form">
+      <div class="email-box">
+        <label for="email">E-Mail :</label>
+        <input id="email" class="email-in" type="text" name="email" required /><br />
       </div>
-    </section>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+      <div class="password-box">
+        <label for="password">Password :</label>
+        <input id="password" class="password-in" type="password" name="password" required /><br />
+      </div>
+      <div class="buttons">
+        <button id="login-button" class="loginbutton" type="submit">Login</button>
+        <button id="signup-button" class="signupbutton" type="submit">Join</button>
+      </div>
+    </form>
+
+    <!-- 회원가입 모달 -->
+    <div id="signup-modal" class="modal">
+      <div id="signup-modal-content">
+        <span id="signup-modal-close">&times;</span>
+        <h2>회원가입</h2>
+        <form id="signup-form">
+          <div class="mb-3">
+            <label for="inputEmail" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="signup-email" aria-describedby="emailHelp" />
+            <button class="btn btn-outline-secondary" type="button" id="emailAuthButton">인증하기</button>
+            <!-- 숨겨진 인증코드 라벨 -->
+            <div id="email-auth" class="input-group mb-3 d-none">
+              <input type="text" id="inputCode" class="form-control" placeholder="인증코드" />
+              <!-- 이메일 인증하기 버튼 -->
+              <button class="btn btn-outline-secondary" type="button" id="submitCode">확인</button>
+            </div>
+            <div id="emailHelp" class="form-text"></div>
+          </div>
+          <div class="mb-3">
+            <label for="signup-nickname" class="form-label">Nickname</label>
+            <input type="text" class="form-control" id="signup-nickname" />
+          </div>
+          <div class="mb-3">
+            <label for="signup-password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="signup-password" />
+          </div>
+          <div class="mb-3">
+            <label for="signup-confirm-password" class="form-label">Password Confirm</label>
+            <input type="password" class="form-control" id="signup-confirm-password" />
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <div id="errMessage" class="form-text"></div>
+      </div>
+    </div>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>

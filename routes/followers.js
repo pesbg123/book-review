@@ -99,7 +99,7 @@ router.get("/users/:userId/following-posts", authMiddleware, async (req, res) =>
 
     const posts = await Posts.findAll({
       where: { UserId: followingIds },
-      attributes: ["postId", "UserId", "nickname", "title", "content", "createdAt", "updatedAt"],
+      attributes: ["postId", "UserId", "nickname", "title", "content", "createdAt", "updatedAt", "img"],
       order: [["createdAt", "DESC"]]
     });
 
